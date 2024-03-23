@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagram</title>
+</head>
+<body>
+    <script>
+        var word1 = prompt("Input the first word: ");
+        var word2 = prompt("Input the second word: ");
+
+        var lower1 = word1.toLowerCase();
+        var lower2 = word2.toLowerCase();
+
+        var length1 = lower1.length;
+        var length2 = lower2.length;
+
+        let Anagram = true;
+
+        if (length1 != length2) {
+            alert("The words are not anagrams of each other.");
+        } 
+        
+        else {
+            compare(lower1, lower2);
+        }
+
+        function compare(lower1, lower2) {
+            var sort1 = lower1.split('').sort().join('');
+            var sort2 = lower2.split('').sort().join('');
+
+            if (sort1 !== sort2) {
+      			Anagram = false;
+                alert("The words are not anagrams of each other.");
+            }
+            
+            else{
+                alert("The words are anagrams of each other.");
+            }
+        }
+    </script>
+</body>
+</html>
